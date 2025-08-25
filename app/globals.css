@@ -2,74 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Custom Properties for brand colors */
-:root {
-  --brand-900: #0E1116;
-  --brand-700: #161B22;
-  --brand-600: #1E2430;
-  --accent-copper-500: #B87A5C;
-  --accent-copper-600: #9E644B;
-  --accent-green-500: #22C55E;
-  --neutral-050: #F8FAFC;
-  --neutral-300: #CBD5E1;
-  --neutral-600: #64748B;
-  --error-600: #DC2626;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Skip link for accessibility */
-.skip-link {
-  @apply absolute -top-10 left-4 z-50 bg-accent-copper-500 text-white px-4 py-2 rounded-md;
-  @apply focus:top-4 transition-all duration-200;
-}
-
-/* Focus ring utilities */
-.focus-ring {
-  @apply outline-2 outline-accent-copper-500 outline-offset-2;
-}
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
 }
 
-/* Body styles */
 body {
-  @apply bg-brand-900 text-neutral-050;
-  @apply font-sans antialiased;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
 }
 
-/* Typography improvements */
-h1, h2, h3, h4, h5, h6 {
-  @apply tracking-tight;
+/* Basic button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.2s;
+  text-decoration: none;
 }
 
-/* Button base styles */
-.btn-base {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-3;
-  @apply font-medium transition-all duration-200;
-  @apply focus:outline-none focus:ring-2 focus:ring-accent-copper-500 focus:ring-offset-2;
-}
-
-.btn-primary {
-  @apply btn-base bg-gradient-to-r from-accent-copper-500 to-accent-copper-600;
-  @apply text-white hover:shadow-lg hover:-translate-y-0.5;
-}
-
-.btn-secondary {
-  @apply btn-base border-2 border-accent-copper-500 text-accent-copper-500;
-  @apply hover:bg-accent-copper-500 hover:text-white hover:-translate-y-0.5;
-}
-
-/* Reduce motion for accessibility */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  html {
-    scroll-behavior: auto;
-  }
+.btn:focus {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
 }
