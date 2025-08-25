@@ -1,51 +1,76 @@
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Delva & Asociados | Abogados de Tecnología, Web3 y Negocio Digital',
-  description: 'Firma legal especializada en tecnología, Web3 y negocio digital.',
-}
-
 export default function HomePage() {
+  const styles = {
+    main: {
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#1a1f2e',
+      color: 'white',
+      fontFamily: 'system-ui, sans-serif',
+      padding: '1rem'
+    },
+    container: {
+      textAlign: 'center' as const,
+      maxWidth: '600px'
+    },
+    title: {
+      fontSize: '2.5rem',
+      fontWeight: 'bold',
+      marginBottom: '1rem'
+    },
+    subtitle: {
+      fontSize: '1.2rem',
+      color: '#cbd5e1',
+      marginBottom: '2rem'
+    },
+    button: {
+      backgroundColor: '#b87a5c',
+      color: 'white',
+      padding: '12px 24px',
+      borderRadius: '25px',
+      textDecoration: 'none',
+      display: 'inline-block',
+      margin: '0 8px 8px 0',
+      border: 'none',
+      cursor: 'pointer'
+    }
+  }
+
   return (
-    <main className="min-h-screen flex items-center justify-center bg-slate-900 text-white">
-      <div className="text-center max-w-2xl mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-6">
-          Abogados que dominan{' '}
-          <span className="text-orange-400">
-            Internet, Web3
-          </span>{' '}
-          y el negocio digital
+    <main style={styles.main}>
+      <div style={styles.container}>
+        <h1 style={styles.title}>
+          Delva & Asociados
         </h1>
         
-        <p className="text-lg text-gray-300 mb-8">
-          Protegemos y escalamos tus activos digitales con estrategia legal práctica 
-          y <strong>time-to-value</strong> rápido.
+        <p style={styles.subtitle}>
+          Abogados especializados en tecnología, Web3 y negocio digital
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          
+        <div>
+          <a 
             href="https://calendar.app.google/VYGFr9HgSGrJamkn9"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-medium transition-colors"
+            style={styles.button}
           >
-            Agenda consulta gratuita (30 min)
+            Agenda Consulta
           </a>
           
-          
+          <a 
             href="https://wa.me/523312136004"
-            target="_blank"
+            target="_blank" 
             rel="noopener noreferrer"
-            className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-6 py-3 rounded-full font-medium transition-colors"
+            style={styles.button}
           >
-            Habla por WhatsApp ahora
+            WhatsApp
           </a>
         </div>
 
-        <div className="mt-8 text-sm text-gray-400">
-          <p>✨ <strong>Next.js Migration Successful</strong> ✨</p>
-          <p>Componentes completos próximamente</p>
-        </div>
+        <p style={{marginTop: '2rem', fontSize: '0.9rem', color: '#6b7280'}}>
+          ✅ Next.js migration successful - Full components coming soon
+        </p>
       </div>
     </main>
   )
